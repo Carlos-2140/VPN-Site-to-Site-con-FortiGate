@@ -34,33 +34,3 @@ ip nat inside source route-map NAT-INTERNET interface FastEthernet1/0 overload
 
 end
 write memory
-
-
-COMANDOS DE VERIFICACION
-
-show ip interface brief
-show ip route
-show running-config | section interface
-show access-lists 100
-show ip nat statistics
-show ip nat translations
-ping 8.8.8.8
-
-
-DIRECCIONAMIENTO DEL ISP
-
-FastEthernet0/0
-IP: 203.0.113.1/30
-Conexion: FortiGate 1
-
-FastEthernet0/1
-IP: 198.51.100.1/30
-Conexion: FortiGate 2
-
-FastEthernet1/0
-IP: DHCP
-IP obtenida durante la practica: 192.168.18.158/24
-Conexion: Cloud1 / red bridged
-
-Gateway por defecto obtenido por DHCP:
-192.168.18.1
