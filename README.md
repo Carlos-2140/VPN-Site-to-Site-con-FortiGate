@@ -33,6 +33,9 @@ El laboratorio incluye:
 
 ## Topología
 
+![Topología real del laboratorio en GNS3](Topologia/topologia-gns3.png)
+
+
 ```mermaid
 flowchart LR
     PC["Windows 10<br/>10.21.40.10/25"]
