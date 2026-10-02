@@ -70,7 +70,7 @@ También se incluye una versión dedicada en [Topologia/topologia.md](Topologia/
 | FortiGate 2 | port2 | `10.21.40.129/28` | — |
 | Ubuntu Server | ens3 | `10.21.40.130/28` | `10.21.40.129` |
 
-Documentación completa: [Documentacion/direccionamiento.md](Documentacion/direccionamiento.md)
+Documentación completa: [Direccionamiento%20IP/direccionamiento.md](Direccionamiento%20IP/direccionamiento.md)
 
 ---
 
