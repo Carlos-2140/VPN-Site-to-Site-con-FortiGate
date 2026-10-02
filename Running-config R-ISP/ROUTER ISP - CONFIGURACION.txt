@@ -34,3 +34,15 @@ ip nat inside source route-map NAT-INTERNET interface FastEthernet1/0 overload
 
 end
 write memory
+
+
+Verificación 
+
+show ip interface brief
+show ip route
+show running-config | section interface
+show access-lists 110
+show route-map
+show running-config | include ip nat
+show ip nat statistics
+show ip nat translations
