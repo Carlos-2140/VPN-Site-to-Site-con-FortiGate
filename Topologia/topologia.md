@@ -1,5 +1,7 @@
 # Topología del Laboratorio
 
+![Topología real del laboratorio en GNS3](topologia-gns3.png)
+
 ```mermaid
 flowchart LR
     PC["Windows 10<br/>10.21.40.10/25"]
