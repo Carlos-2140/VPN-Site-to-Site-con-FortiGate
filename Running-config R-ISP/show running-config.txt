@@ -1,0 +1,100 @@
+R-ISP#show running-config
+Building configuration...
+
+Current configuration : 1723 bytes
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R-ISP
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+memory-size iomem 5
+no ip icmp rate-limit unreachable
+ip cef
+!
+!
+ip auth-proxy max-nodata-conns 3
+ip admission max-nodata-conns 3
+!
+!
+no ip domain lookup
+!
+!
+!
+!
+!
+!
+ip tcp synwait-time 5
+!
+!
+!
+!
+interface FastEthernet0/0
+ ip address 203.0.113.1 255.255.255.252
+ ip nat inside
+ ip virtual-reassembly
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1
+ ip address 198.51.100.1 255.255.255.252
+ ip nat inside
+ ip virtual-reassembly
+ duplex auto
+ speed auto
+!
+interface FastEthernet1/0
+ ip address 192.168.18.159 255.255.255.0
+ ip nat outside
+ ip virtual-reassembly
+ duplex auto
+ speed auto
+!
+ip forward-protocol nd
+ip route 0.0.0.0 0.0.0.0 192.168.18.1
+!
+no ip http server
+no ip http secure-server
+ip nat inside source route-map NAT-INTERNET interface FastEthernet1/0 overload
+!
+access-list 100 deny   ip 203.0.113.0 0.0.0.3 192.168.18.0 0.0.0.255
+access-list 100 deny   ip 198.51.100.0 0.0.0.3 192.168.18.0 0.0.0.255
+access-list 100 permit ip 203.0.113.0 0.0.0.3 any
+access-list 100 permit ip 198.51.100.0 0.0.0.3 any
+access-list 110 deny   ip host 203.0.113.2 192.168.18.0 0.0.0.255
+access-list 110 deny   ip host 198.51.100.2 192.168.18.0 0.0.0.255
+access-list 110 permit ip host 203.0.113.2 any
+access-list 110 permit ip host 198.51.100.2 any
+no cdp log mismatch duplex
+route-map NAT-INTERNET permit 10
+ match ip address 110
+!
+!
+!
+control-plane
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+!
+!
+end
+
+
