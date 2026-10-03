@@ -8,7 +8,7 @@ El proyecto integra segmentación mediante VLAN, DHCP, enrutamiento, políticas 
 
 ## Video demostrativo
 
-> Agregar aquí el enlace al video de demostración cuando esté disponible.
+https://www.youtube.com/watch?v=LJksM_jKNro
 
 ---
 
